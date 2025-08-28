@@ -1,4 +1,4 @@
-const API_KEY = "8f0a7d4c7295a8e77fc49e87f8902eae"; // ⚠️ Reemplazalo con tu API key de OpenWeatherMap
+const API_KEY = "8f0a7d4c7295a8e77fc49e87f8902eae"; 
 const BASE_URL = "https://api.openweathermap.org/data/2.5";
 
 export const getWeatherData = async (city, unit = "metric") => {

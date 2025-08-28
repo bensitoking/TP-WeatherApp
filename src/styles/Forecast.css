@@ -1,17 +1,159 @@
 .forecast-container {
-  margin-top: 20px;
+  margin-top: 2rem;
+}
+
+.forecast-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.forecast-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+  border-radius: 3px;
 }
 
 .forecast-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1.25rem;
 }
 
 .forecast-card {
-  background: white;
-  padding: 12px;
+  background: var(--card-background);
+  padding: 1.25rem;
   text-align: center;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forecast-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.forecast-day {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.forecast-date {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.forecast-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0.5rem 0;
+}
+
+.forecast-temp {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0.5rem 0;
+}
+
+.forecast-description {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-transform: capitalize;
+}
+
+.forecast-details {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.forecast-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.75rem;
+}
+
+.forecast-detail span:first-child {
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.forecast-detail span:last-child {
+  font-weight: 600;
+}
+
+.hourly-forecast {
+  margin-top: 2rem;
+}
+
+.hourly-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem 0.5rem;
+  scrollbar-width: thin;
+}
+
+.hourly-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.hourly-scroll::-webkit-scrollbar-thumb {
+  background: rgba(25, 118, 210, 0.3);
+  border-radius: 3px;
+}
+
+.hourly-item {
+  flex: 0 0 auto;
+  width: 100px;
+  background: var(--card-background);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.hourly-time {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.hourly-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0.5rem 0;
+}
+
+.hourly-temp {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .forecast-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+  }
+  
+  .forecast-card {
+    padding: 1rem;
+  }
 }
